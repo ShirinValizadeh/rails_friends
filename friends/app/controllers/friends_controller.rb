@@ -69,7 +69,7 @@ class FriendsController < ApplicationController
 
 #current_user shirin 1
   def corrent_user
-      @friend = current_user.friends.find_by(:id params[:id])
+      @friend = current_user.friends.find_by(id: params[:id])
       redirect_to friends_path , notice: "NOT Authorized To Edit this Friend" if @friend.nil?
   end
 
